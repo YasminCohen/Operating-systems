@@ -1,0 +1,50 @@
+Operating Systems - Assignment 3 IPC
+Shanny Abid and yasmin cohen
+
+------- Requirements -------
+* Linux machine (Ubuntu 22.04 LTS preferable)
+* OpenSSL crypto library
+* GNU C Compiler
+* Make
+
+
+------- Building -------
+1) Install OpenSSL crypto library
+sudo apt-get install libssl-dev
+
+2) Building the program
+make all
+
+
+------- Running -------
+PART A-
+
+* Open STNC in server normal chat mode:
+./stnc -s <PORT>
+
+* Open STNC in client normal chat mode:
+./stnc -c <IP> <PORT>
+
+PART B-
+
+* Open STNC in server performance mode:
+./stnc -s <PORT> -p
+
+* Open STNC in server performance and quiet mode:
+./stnc -s <PORT> -p -q
+
+* Open STNC in client performance mode:
+./stnc -c <IP> <PORT> -p <TYPE> <PARAM>
+
+
+
+---- Options for TYPE and PARAM ----
+* IPv4 & TCP mode: ipv4 tcp
+* IPv4 & UDP mode: ipv4 udp
+* IPv6 & TCP mode: ipv6 tcp
+* IPv6 & UDP mode: ipv6 udp
+* UDS & Datagram mode: uds dgram
+* UDS & Stream mode: uds stream
+* Memory map mode with specific file: mmap filename
+* Pipe mode with specific file: pipe filename
+

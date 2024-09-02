@@ -1,0 +1,61 @@
+Operating Systems - Assignment 2
+
+By Yasmin Cohen - 212733836 and Shani Avid- 323858324
+
+The task is made of 3 parts: files operations, dynamic libraries, and basic shell
+
+First of all, to build the program so that it is ready to run, you need to use the make all command.
+After this command all files will be ready to run.
+
+You can see an example of running make all in each of the screenshots.
+
+In the partA we were requested to implement two small programs, that fills like a regular CMD tools.
+
+Tool 1: “cmp”
+the tool will compare two files, and return “0” if they are equal, and “1” if not (return an INT).
+The tool will support -v flag for verbose output. By this we mean that the tool will print “equal” or
+“distinct”, in addition to returning the int value.
+The toll will support -i flag, that mean “ignore case” so “AAA” and “aaa” meaning equals
+We implemented this tool in the cmp.c file which is activated using the command "./cmp <file1> <file2> -v
+Additional examples of running this tool are in a screenshot called "cmp".
+
+Tool 2: “copy”, the tool will copy a file to another place and/or name.
+The tool will return “0” on success, or “1” on failure (return an INT)
+The tool will create a new file, if it does not exist, but it will not overwrite a file if it do exist.
+the tool will support -v flag, that will output “success” if the file is copied, or “target file exist” if this is
+the case, or “general failure” on some other problem (in addition to the returned INT value).
+The tool will support -f flag (that means force), that allows to overwrite the target file
+We implemented this tool in the copy.c file which is activated using the command "./copy <file1> <file2> -v
+Additional examples of running this tool are in a screenshot called "copy".
+
+In the partB we were requested to implement a coding library.
+The libraries should support “encode” and “decode” methods.
+Note: the libraries should be “reversable”, meaning that if one does “encode” and then “decode, he will
+get the original string.
+
+We implemented coding libraries. with two different coding methods.
+
+Method a, named codecA: We converted all lowercase characters to uppercase, and all uppercase letters to lowercase. All other characters will remain unchanged.
+
+Method B, named codecB: convert all characters to the next 3rd character (adding a number of 3 to ascii).
+
+We implemented this tool in the encode.c decode.c codecA.c codecB.c file which is activated using the command "./encode/decode <codecA/codecB> <message>
+Additional examples of running this tool are in a screenshot called "encode&&decode".
+
+
+In the partC we were requested to write a shell program named stshell (st for students).
+The features are:
+1) Be able to run CMD tools that exist on system (by fork + exec + wait)
+2) Be able to stop running tool by pressing Ctrl+c, but not killing the shell itself (by signal handler)
+3) Be able to redirect output with “>” and “>>”, and allow piping with “|”, at least for 2 following
+pipes. For example command like this should be supported “ls -l | grep aaa | wc”
+4) be able to stop itself by “exit” command
+We implemented this tool in the stshell.c file which is activated using the command "./stshell"
+Additional examples of running this tool are in a screenshot called "stshell".
+
+need:
+* Linux machine (Ubuntu 22.04 LTS recommended)
+
+* GNU C Compiler (GCC)
+
+* make all (Makefile)
